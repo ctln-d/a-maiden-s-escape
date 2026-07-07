@@ -62,11 +62,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(16.333334, 32)
+size = Vector2(20.333334, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=1749205004]
 scale = Vector2(3, 3)
@@ -78,6 +78,8 @@ position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
 animation = &"run"
 autoplay = "idle"
+frame = 3
+frame_progress = 0.15467583
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822854714]
 position = Vector2(-1.166667, 0)
