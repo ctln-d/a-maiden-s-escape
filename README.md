@@ -4,7 +4,7 @@ The Wordkeep is a tool to collect words and their definitions using the Merriam-
 
 # Demo
 
-![Website Screenshot](the-wordkeep-demo.png)
+![Game Screenshot](a-maidens-escape-demo.png)
 
 # What's New
 
