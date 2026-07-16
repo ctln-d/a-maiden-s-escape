@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c24l4yh3s37gs"]
+
+[ext_resource type="Texture2D" uid="uid://6a6r4idagnmi" path="res://assets/images/dough.png" id="1_y70ql"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4istd"]
+radius = 38.27372
+height = 106.59715
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w4b7"]
+radius = 21.684097
+height = 81.78595
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gorpe"]
+radius = 29.984829
+height = 91.117546
+
+[node name="Dough" type="StaticBody2D" unique_id=1587606720]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=649460105]
+texture = ExtResource("1_y70ql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278962844]
+position = Vector2(46.000004, 17)
+rotation = 1.6666601
+shape = SubResource("CapsuleShape2D_4istd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2070412159]
+position = Vector2(-39, 18.000002)
+rotation = 0.88888943
+shape = SubResource("CapsuleShape2D_3w4b7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=2132247799]
+position = Vector2(-5.0000005, 6)
+rotation = 4.4001346
+shape = SubResource("CapsuleShape2D_gorpe")
