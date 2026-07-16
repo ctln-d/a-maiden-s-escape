@@ -6,13 +6,6 @@ you're a maiden who escapes(?)
 
 ![Game Screenshot](a-maidens-escape-demo.png)
 
-# What's New
-
-- User authentication
-- Custom source/notes space for saved words
-- Word deletion functionality
-- MongoDB database integration
-
 # Built With
 
 ![Godot Engine](https://img.shields.io/badge/GODOT-%23FFFFFF.svg?style=for-the-badge&logo=godot-engine)
@@ -24,25 +17,10 @@ you're a maiden who escapes(?)
 # Contributing
 
 ## Cloning and Installation
-1. Clone the repo
-```
-git clone https://github.com/ctln-d/the-wordkeep
-```
-2. Install and run backend
-```
-cd backend
-npm install
-node server.js
-```
-3. Install and run frontend
-```
-cd frontend
-npm install
-npm run dev
-```
+
 
 ## Making Contributions
 - Make sure to create a new branch and name it adequately
 - Write clear commit messages
 - When pushing changes, open a pull request and describe the changes made
->>>>>>> 5970383288c408ebcbc483faee92508d12c6eca7
+
