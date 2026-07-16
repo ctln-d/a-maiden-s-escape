@@ -20,7 +20,6 @@ you're a maiden who escapes(?)
 # Getting Started
 
 1. Open the URL on itch.io to begin playing: https://ctln-d.itch.io/a-maidens-escape/download/1ey0UQNSIza289Q5ZVsVrE9GYyBDAGd1Z7g0qL9K
-2. 
 
 # Contributing
 
