@@ -74,7 +74,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(290.6667, 494.33334)
+size = Vector2(216, 466.33334)
 
 [node name="Player" type="CharacterBody2D" unique_id=1749205004]
 script = ExtResource("1_dqkch")
@@ -89,5 +89,5 @@ frame = 1
 frame_progress = 0.40093052
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203664312]
-position = Vector2(-33.000008, 33.83333)
+position = Vector2(-40.000004, 19.833328)
 shape = SubResource("RectangleShape2D_dqkch")
