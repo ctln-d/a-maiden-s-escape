@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://7ylg4gcct1t1"]
+
+[ext_resource type="Texture2D" uid="uid://d0nyxka4q6xnf" path="res://assets/images/npcs/pie-boy-toss.png" id="1_ik1fn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbbex"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(2, 0, 556, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tisqf"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(558, 0, 556, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xptc"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(1114, 0, 556, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ygf"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(1670, 0, 556, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1vl5"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(2226, 0, 556, 742)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bdak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbbex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tisqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xptc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ygf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1vl5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pie Boy" type="Area2D" unique_id=966723688]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1753528888]
+sprite_frames = SubResource("SpriteFrames_6bdak")
+autoplay = "default"
+frame = 1
+frame_progress = 0.98687005

@@ -2,26 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://6a6r4idagnmi" path="res://assets/images/dough.png" id="1_y70ql"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4istd"]
-radius = 26.167776
-height = 78.79048
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gorpe"]
-radius = 29.984829
-height = 91.117546
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y70ql"]
+radius = 0.9994755
+height = 82.15142
 
 [node name="Dough" type="AnimatableBody2D" unique_id=217617482]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649460105]
 texture = ExtResource("1_y70ql")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278962844]
-position = Vector2(27.000004, 3.0000005)
-rotation = 1.6666601
-shape = SubResource("CapsuleShape2D_4istd")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=2132247799]
-position = Vector2(-1, 6)
-rotation = -1.7472547
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("CapsuleShape2D_gorpe")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=789835687]
+position = Vector2(13.000001, -19)
+rotation = 1.5383687
+shape = SubResource("CapsuleShape2D_y70ql")

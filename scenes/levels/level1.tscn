@@ -1,85 +1,14 @@
 [gd_scene format=3 uid="uid://d3f24rcpvq3b0"]
 
 [ext_resource type="Texture2D" uid="uid://dg047ir4vyo5y" path="res://assets/images/backgrounds/ghent-altarpiece-1.png" id="1_4tcl0"]
-[ext_resource type="PackedScene" uid="uid://c24l4yh3s37gs" path="res://scenes/dough.tscn" id="3_dd0lh"]
 [ext_resource type="PackedScene" uid="uid://c7gesdy0w350a" path="res://scenes/player.tscn" id="4_bfxgj"]
+[ext_resource type="PackedScene" uid="uid://7ylg4gcct1t1" path="res://scenes/pie_boy.tscn" id="4_dywbp"]
+[ext_resource type="PackedScene" uid="uid://ldpinndd0s7b" path="res://scenes/doughv2.tscn" id="5_dywbp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tcl0"]
 size = Vector2(269.3333, 9)
 
-[sub_resource type="Animation" id="Animation_dd0lh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(190.33334, 138.66669)]
-}
-
 [sub_resource type="Animation" id="Animation_bfxgj"]
-resource_name = "dough"
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(64.666664, 173), Vector2(151.33334, 173)]
-}
-
-[sub_resource type="Animation" id="Animation_dywbp"]
-resource_name = "dough2"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(190.33334, 138.66669), Vector2(245.33331, 138.66669)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dywbp"]
-_data = {
-&"RESET": SubResource("Animation_dd0lh"),
-&"dough": SubResource("Animation_bfxgj"),
-&"dough2": SubResource("Animation_dywbp")
-}
-
-[sub_resource type="Animation" id="Animation_1seuy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(26, 97.00001)]
-}
-
-[sub_resource type="Animation" id="Animation_2r1tl"]
-resource_name = "dough3"
 length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
@@ -89,16 +18,33 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(1, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(26, 97.00001), Vector2(244.66669, 97.000015)]
+"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a7m2"]
+[sub_resource type="Animation" id="Animation_dywbp"]
+resource_name = "up"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1seuy"]
 _data = {
-&"RESET": SubResource("Animation_1seuy"),
-&"dough3": SubResource("Animation_2r1tl")
+&"RESET": SubResource("Animation_bfxgj"),
+&"up": SubResource("Animation_dywbp")
 }
 
 [node name="LevelRoot" type="Node2D" unique_id=25686978]
@@ -123,30 +69,22 @@ offset_bottom = 206.33348
 position = Vector2(134.33334, 4.1666718)
 shape = SubResource("RectangleShape2D_4tcl0")
 
-[node name="Dough" parent="." unique_id=217617482 instance=ExtResource("3_dd0lh")]
-position = Vector2(190.33334, 138.66669)
-scale = Vector2(0.2, 0.2)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dough" unique_id=1653082554]
-libraries/ = SubResource("AnimationLibrary_dywbp")
-autoplay = &"dough"
-
-[node name="Dough2" parent="." unique_id=2082809401 instance=ExtResource("3_dd0lh")]
-position = Vector2(190.33334, 138.66669)
-scale = Vector2(0.2, 0.2)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dough2" unique_id=1333834009]
-libraries/ = SubResource("AnimationLibrary_dywbp")
-autoplay = &"dough2"
-
-[node name="Dough3" parent="." unique_id=1742418505 instance=ExtResource("3_dd0lh")]
-position = Vector2(26, 97.00001)
-scale = Vector2(0.2, 0.2)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dough3" unique_id=1676313249]
-libraries/ = SubResource("AnimationLibrary_8a7m2")
-autoplay = &"dough3"
-
 [node name="Player" parent="." unique_id=1749205004 instance=ExtResource("4_bfxgj")]
-position = Vector2(28.333334, 155.66669)
-scale = Vector2(0.15, 0.15)
+position = Vector2(21.333332, 167.99998)
+scale = Vector2(0.11, 0.11)
+
+[node name="Pie Boy" type="Node2D" parent="." unique_id=1214757679]
+position = Vector2(249.6667, 65.33333)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Pie Boy" parent="Pie Boy" unique_id=966723688 instance=ExtResource("4_dywbp")]
+position = Vector2(234.66669, 191.00006)
+scale = Vector2(0.10000001, 0.10000001)
+
+[node name="Dough V2" parent="Pie Boy" unique_id=329957939 instance=ExtResource("5_dywbp")]
+position = Vector2(250.5556, 165)
+scale = Vector2(0.10000001, 0.10000001)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pie Boy/Dough V2" unique_id=562638212]
+libraries/ = SubResource("AnimationLibrary_1seuy")
+autoplay = &"up"
