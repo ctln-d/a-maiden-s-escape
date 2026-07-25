@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://37p5lyvsyp8n"
-path="res://.godot/imported/pie-boy-toss.png-8a7656094854ce8fa13789416678c30a.ctex"
+uid="uid://dmnk68etg76xy"
+path="res://.godot/imported/platform.png-0e94eb507eb1d35883bba856427d6b80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npcs/pie-boy-toss.png"
-dest_files=["res://.godot/imported/pie-boy-toss.png-8a7656094854ce8fa13789416678c30a.ctex"]
+source_file="res://assets/images/platform.png"
+dest_files=["res://.godot/imported/platform.png-0e94eb507eb1d35883bba856427d6b80.ctex"]
 
 [params]
 

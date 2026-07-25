@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://d3f24rcpvq3b0"]
 
 [ext_resource type="Texture2D" uid="uid://dg047ir4vyo5y" path="res://assets/images/backgrounds/ghent-altarpiece-1.png" id="1_4tcl0"]
+[ext_resource type="Texture2D" uid="uid://dmnk68etg76xy" path="res://assets/images/platform.png" id="2_dywbp"]
 [ext_resource type="PackedScene" uid="uid://c7gesdy0w350a" path="res://scenes/player.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://7ylg4gcct1t1" path="res://scenes/pie_boy.tscn" id="4_dywbp"]
 [ext_resource type="PackedScene" uid="uid://ldpinndd0s7b" path="res://scenes/doughv2.tscn" id="5_dywbp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tcl0"]
-size = Vector2(269.3333, 9)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dywbp"]
+size = Vector2(1126.5319, 59.986725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1seuy"]
+size = Vector2(516.9963, 59.986725)
 
 [sub_resource type="Animation" id="Animation_bfxgj"]
-length = 4.0
-loop_mode = 2
+length = 6.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,16 +22,16 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(1, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496)]
+"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496), Vector2(250.5556, 165)]
 }
 
 [sub_resource type="Animation" id="Animation_dywbp"]
 resource_name = "up"
-length = 3.0
-loop_mode = 2
+length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,10 +39,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496)]
+"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496), Vector2(250.5556, 165)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1seuy"]
@@ -51,6 +55,7 @@ _data = {
 scale = Vector2(3, 3)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1851350593]
+visible = false
 offset_left = -48.0
 offset_top = -19.333334
 offset_right = 2510.0
@@ -58,19 +63,95 @@ offset_bottom = 1212.6666
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_4tcl0")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1893210278]
-offset_top = 198.00015
-offset_right = 269.33334
-offset_bottom = 206.33348
+[node name="Platform3" type="TextureRect" parent="." unique_id=1526815399]
+offset_left = -51.333252
+offset_top = 110.66675
+offset_right = 1061.6667
+offset_bottom = 178.66675
+rotation = 0.008726646
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect" unique_id=620711385]
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform3" unique_id=597106873]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=478863279]
-position = Vector2(134.33334, 4.1666718)
-shape = SubResource("RectangleShape2D_4tcl0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3/StaticBody2D" unique_id=1381600799]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Platform" type="TextureRect" parent="." unique_id=2142674894]
+offset_left = -5.333333
+offset_top = 196.33344
+offset_right = 1107.6666
+offset_bottom = 264.33344
+rotation = 0.008726646
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform" unique_id=1643233400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D" unique_id=860436624]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Platform2" type="TextureRect" parent="." unique_id=1835570837]
+offset_left = 119.0
+offset_top = 195.66663
+offset_right = 1232.0
+offset_bottom = 263.66663
+rotation = 0.017453292
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform2" unique_id=1170368131]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2/StaticBody2D" unique_id=605533930]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Platform4" type="TextureRect" parent="." unique_id=2028557034]
+offset_left = 113.99999
+offset_top = 113.333336
+offset_right = 615.9868
+offset_bottom = 181.33334
+rotation = 0.008726646
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform4" unique_id=1110803943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4/StaticBody2D" unique_id=803295276]
+position = Vector2(249.19385, 36.0943)
+rotation = -0.013962636
+scale = Vector2(0.99999905, 0.99999905)
+shape = SubResource("RectangleShape2D_1seuy")
+
+[node name="Platform5" type="TextureRect" parent="." unique_id=731229737]
+offset_left = 225.33325
+offset_top = 113.33334
+offset_right = 727.32007
+offset_bottom = 181.33334
+rotation = 0.008726646
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform5" unique_id=1650955428]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5/StaticBody2D" unique_id=222226850]
+position = Vector2(249.19385, 36.0943)
+rotation = -0.013962636
+scale = Vector2(0.99999905, 0.99999905)
+shape = SubResource("RectangleShape2D_1seuy")
 
 [node name="Player" parent="." unique_id=1749205004 instance=ExtResource("4_bfxgj")]
-position = Vector2(21.333332, 167.99998)
+position = Vector2(21.333328, 82.333374)
 scale = Vector2(0.11, 0.11)
 
 [node name="Pie Boy" type="Node2D" parent="." unique_id=1214757679]
@@ -86,5 +167,21 @@ position = Vector2(250.5556, 165)
 scale = Vector2(0.10000001, 0.10000001)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pie Boy/Dough V2" unique_id=562638212]
+libraries/ = SubResource("AnimationLibrary_1seuy")
+autoplay = &"up"
+
+[node name="Pie Boy2" type="Node2D" parent="." unique_id=968358521]
+position = Vector2(349.66663, 65.33333)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Pie Boy" parent="Pie Boy2" unique_id=43989139 instance=ExtResource("4_dywbp")]
+position = Vector2(234.66669, 191.00006)
+scale = Vector2(0.10000001, 0.10000001)
+
+[node name="Dough V2" parent="Pie Boy2" unique_id=1335150206 instance=ExtResource("5_dywbp")]
+position = Vector2(250.5556, 165)
+scale = Vector2(0.10000001, 0.10000001)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pie Boy2/Dough V2" unique_id=2107888434]
 libraries/ = SubResource("AnimationLibrary_1seuy")
 autoplay = &"up"
