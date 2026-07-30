@@ -2,9 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dg047ir4vyo5y" path="res://assets/images/backgrounds/ghent-altarpiece-1.png" id="1_4tcl0"]
 [ext_resource type="Texture2D" uid="uid://dmnk68etg76xy" path="res://assets/images/platform.png" id="2_dywbp"]
+[ext_resource type="Texture2D" uid="uid://f4kuqf2p3si4" path="res://assets/images/oven.png" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://c7gesdy0w350a" path="res://scenes/player.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://7ylg4gcct1t1" path="res://scenes/pie_boy.tscn" id="4_dywbp"]
-[ext_resource type="PackedScene" uid="uid://ldpinndd0s7b" path="res://scenes/doughv2.tscn" id="5_dywbp"]
+[ext_resource type="PackedScene" uid="uid://cq1rpkk21n3nr" path="res://scenes/gemstone.tscn" id="7_2r1tl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dywbp"]
 size = Vector2(1126.5319, 59.986725)
@@ -12,44 +13,11 @@ size = Vector2(1126.5319, 59.986725)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1seuy"]
 size = Vector2(516.9963, 59.986725)
 
-[sub_resource type="Animation" id="Animation_bfxgj"]
-length = 6.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496), Vector2(250.5556, 165)]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r1tl"]
+size = Vector2(300.00003, 306.66666)
 
-[sub_resource type="Animation" id="Animation_dywbp"]
-resource_name = "up"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(250.5556, 165), Vector2(250.55562, -83.333496), Vector2(250.5556, 165)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1seuy"]
-_data = {
-&"RESET": SubResource("Animation_bfxgj"),
-&"up": SubResource("Animation_dywbp")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a7m2"]
+size = Vector2(187.77777, 534.44446)
 
 [node name="LevelRoot" type="Node2D" unique_id=25686978]
 scale = Vector2(3, 3)
@@ -150,38 +118,109 @@ rotation = -0.013962636
 scale = Vector2(0.99999905, 0.99999905)
 shape = SubResource("RectangleShape2D_1seuy")
 
+[node name="Oven" type="TextureRect" parent="." unique_id=1180133908]
+offset_left = 325.6667
+offset_top = -3.666666
+offset_right = 1245.6667
+offset_bottom = 1289.3334
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_1seuy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Oven" unique_id=1202776267]
+position = Vector2(43.333332, 595.55554)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven/StaticBody2D" unique_id=1624618907]
+position = Vector2(140, 131.11108)
+shape = SubResource("RectangleShape2D_2r1tl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Oven/StaticBody2D" unique_id=1147872442]
+position = Vector2(215, -301.66666)
+shape = SubResource("RectangleShape2D_8a7m2")
+
+[node name="Platform6" type="TextureRect" parent="." unique_id=166853489]
+offset_left = 93.66666
+offset_top = 305.33325
+offset_right = 1206.6666
+offset_bottom = 373.33325
+rotation = 0.008726646
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform6" unique_id=1327024689]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6/StaticBody2D" unique_id=1385794831]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Platform7" type="TextureRect" parent="." unique_id=1490250038]
+offset_left = 217.99988
+offset_top = 304.66675
+offset_right = 1330.9999
+offset_bottom = 372.66675
+rotation = 0.017453292
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform7" unique_id=1894006043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform7/StaticBody2D" unique_id=174217912]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Platform9" type="TextureRect" parent="." unique_id=1527466586]
+offset_left = -34.33351
+offset_top = 305.00024
+offset_right = 1078.6665
+offset_bottom = 373.00024
+rotation = 0.017453292
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform9" unique_id=866419981]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform9/StaticBody2D" unique_id=636344852]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Platform11" type="TextureRect" parent="." unique_id=1593200693]
+offset_left = -132.33344
+offset_top = 196.0003
+offset_right = 980.66656
+offset_bottom = 264.0003
+rotation = 0.017453292
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_dywbp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform11" unique_id=593353624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform11/StaticBody2D" unique_id=1713335851]
+position = Vector2(553.932, 31.839355)
+rotation = -0.013962635
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_dywbp")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=530746436]
+position = Vector2(-81.66667, 226.66667)
+scale = Vector2(0.15, 0.15)
+
+[node name="Pie Boy" parent="Enemies" unique_id=966723688 instance=ExtResource("4_dywbp")]
+position = Vector2(1264.4446, -359.99997)
+scale = Vector2(-0.43, 0.43)
+
+[node name="Pie Boy2" parent="Enemies" unique_id=1902266607 instance=ExtResource("4_dywbp")]
+position = Vector2(1962.2223, -362.2222)
+scale = Vector2(-0.43, 0.43)
+
+[node name="Gemstone" parent="." unique_id=1636874804 instance=ExtResource("7_2r1tl")]
+position = Vector2(-81.66667, 226.66667)
+scale = Vector2(0.15, 0.15)
+
 [node name="Player" parent="." unique_id=1749205004 instance=ExtResource("4_bfxgj")]
-position = Vector2(21.333328, 82.333374)
-scale = Vector2(0.11, 0.11)
-
-[node name="Pie Boy" type="Node2D" parent="." unique_id=1214757679]
-position = Vector2(249.6667, 65.33333)
-scale = Vector2(-0.6, 0.6)
-
-[node name="Pie Boy" parent="Pie Boy" unique_id=966723688 instance=ExtResource("4_dywbp")]
-position = Vector2(234.66669, 191.00006)
-scale = Vector2(0.10000001, 0.10000001)
-
-[node name="Dough V2" parent="Pie Boy" unique_id=329957939 instance=ExtResource("5_dywbp")]
-position = Vector2(250.5556, 165)
-scale = Vector2(0.10000001, 0.10000001)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Pie Boy/Dough V2" unique_id=562638212]
-libraries/ = SubResource("AnimationLibrary_1seuy")
-autoplay = &"up"
-
-[node name="Pie Boy2" type="Node2D" parent="." unique_id=968358521]
-position = Vector2(349.66663, 65.33333)
-scale = Vector2(-0.6, 0.6)
-
-[node name="Pie Boy" parent="Pie Boy2" unique_id=43989139 instance=ExtResource("4_dywbp")]
-position = Vector2(234.66669, 191.00006)
-scale = Vector2(0.10000001, 0.10000001)
-
-[node name="Dough V2" parent="Pie Boy2" unique_id=1335150206 instance=ExtResource("5_dywbp")]
-position = Vector2(250.5556, 165)
-scale = Vector2(0.10000001, 0.10000001)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Pie Boy2/Dough V2" unique_id=2107888434]
-libraries/ = SubResource("AnimationLibrary_1seuy")
-autoplay = &"up"
+position = Vector2(2.3333333, 79.666664)
+scale = Vector2(0.334, 0.334)

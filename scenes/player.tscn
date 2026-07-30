@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d2x7cfndop224" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dne6oclf7r6xr" path="res://assets/images/player/idle.png" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ck7wkq1sml74u" path="res://assets/images/player/walk.png" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://dl63nso06ynsu" path="res://scripts/gemstoneui.gd" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("1_qhqgy")
@@ -82,6 +83,7 @@ script = ExtResource("1_dqkch")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1905180371]
 texture_filter = 1
 position = Vector2(-1, 0)
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
 animation = &"idle"
 autoplay = "idle"
@@ -89,7 +91,37 @@ frame = 1
 frame_progress = 0.40093052
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203664312]
-position = Vector2(-40.000004, 19.833328)
+position = Vector2(-13, 7)
+scale = Vector2(0.35, 0.35)
 shape = SubResource("RectangleShape2D_dqkch")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=523691585]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=206689069]
+
+[node name="UI" type="Control" parent="." unique_id=1735756174]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1314656744]
+z_index = 5
+layout_mode = 0
+offset_left = -401.0
+offset_top = -300.0
+offset_right = -282.0
+offset_bottom = -260.0
+color = Color(0.34117648, 0.8862745, 0.3019608, 1)
+
+[node name="Label" type="Label" parent="UI" unique_id=616201736]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.926001
+anchor_top = -7.4160004
+anchor_right = -9.926001
+anchor_bottom = -7.4160004
+offset_left = 9.040039
+offset_top = 4.6400146
+offset_right = 96.67639
+offset_bottom = 30.640015
+script = ExtResource("4_dqkch")

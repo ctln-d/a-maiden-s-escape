@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cq1rpkk21n3nr"]
+
+[ext_resource type="Script" uid="uid://c1s5jc4m5iua2" path="res://scripts/gemstone.gd" id="1_qgbp5"]
+[ext_resource type="Texture2D" uid="uid://dkjoxlbq6dslv" path="res://assets/images/gemstone.png" id="1_yi24a"]
+[ext_resource type="AudioStream" uid="uid://cnwpwi1yo0bhq" path="res://assets/audio/gemstone collect.mp3" id="3_km4se"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgbp5"]
+radius = 30.0
+height = 68.0
+
+[node name="Gemstone" type="Area2D" unique_id=1636874804]
+script = ExtResource("1_qgbp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=217907444]
+texture = ExtResource("1_yi24a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70149466]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_qgbp5")
+
+[node name="CollectedSound" type="AudioStreamPlayer2D" parent="." unique_id=1765655657]
+stream = ExtResource("3_km4se")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
