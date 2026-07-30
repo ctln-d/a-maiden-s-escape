@@ -20,5 +20,6 @@ shape = SubResource("CapsuleShape2D_qgbp5")
 
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="." unique_id=1765655657]
 stream = ExtResource("3_km4se")
+volume_db = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

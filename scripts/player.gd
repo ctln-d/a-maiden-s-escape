@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 250.0
 const JUMP_VELOCITY = -850.0
+var alive = true
 var can_move = true
 
 
@@ -37,3 +38,5 @@ func _physics_process(delta: float) -> void:
 		elif direction == -1.0:
 			animated_sprite_2d.flip_h = true
 		
+func die() -> void:
+	alive = false

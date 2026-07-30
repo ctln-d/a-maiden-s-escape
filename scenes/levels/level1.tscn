@@ -217,7 +217,9 @@ scale = Vector2(-0.43, 0.43)
 position = Vector2(1962.2223, -362.2222)
 scale = Vector2(-0.43, 0.43)
 
-[node name="Gemstone" parent="." unique_id=1636874804 instance=ExtResource("7_2r1tl")]
+[node name="Gemstones" type="Node2D" parent="." unique_id=981225943]
+
+[node name="Gemstone" parent="Gemstones" unique_id=1636874804 instance=ExtResource("7_2r1tl")]
 position = Vector2(-81.66667, 226.66667)
 scale = Vector2(0.15, 0.15)
 

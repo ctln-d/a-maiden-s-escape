@@ -143,3 +143,5 @@ shape = SubResource("CircleShape2D_26ygf")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dough" unique_id=1422452961]
 libraries/ = SubResource("AnimationLibrary_26ygf")
 autoplay = &"toss"
+
+[connection signal="body_entered" from="Dough/Area2D" to="." method="_on_area_2d_body_entered"]
