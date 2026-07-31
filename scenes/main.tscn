@@ -2,8 +2,40 @@
 
 [ext_resource type="Script" uid="uid://b2weao3pkhr5f" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://d3f24rcpvq3b0" path="res://scenes/levels/level1.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://bs10n4swdhlyf" path="res://assets/images/score-panel.png" id="3_sugp2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jyhfs"]
+texture = ExtResource("3_sugp2")
 
 [node name="Main" type="Node2D" unique_id=1924055560]
 script = ExtResource("1_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=25686978 instance=ExtResource("2_0wfyh")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1827430870]
+
+[node name="ScorePanel" type="Panel" parent="HUD" unique_id=1263257013]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -181.0
+offset_top = -12.0
+offset_right = 1924.0
+offset_bottom = 851.0
+grow_horizontal = 0
+scale = Vector2(0.1, 0.1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_jyhfs")
+
+[node name="Label" type="Label" parent="HUD/ScorePanel" unique_id=1948807200]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.39400002
+anchor_right = 0.133
+anchor_bottom = 0.39400002
+offset_left = 0.035003662
+offset_top = -0.022033691
+offset_right = 1450.0345
+offset_bottom = 279.9779
+theme_override_colors/font_color = Color(0.31764707, 1, 1, 1)
+text = "HELLOOO"
