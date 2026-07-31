@@ -1,8 +1,50 @@
 [gd_scene format=3 uid="uid://cq1rpkk21n3nr"]
 
 [ext_resource type="Script" uid="uid://c1s5jc4m5iua2" path="res://scripts/gemstone.gd" id="1_qgbp5"]
-[ext_resource type="Texture2D" uid="uid://dkjoxlbq6dslv" path="res://assets/images/gemstone.png" id="1_yi24a"]
+[ext_resource type="Texture2D" uid="uid://dkjoxlbq6dslv" path="res://assets/images/gemstone/gemstone.png" id="1_yi24a"]
+[ext_resource type="Texture2D" uid="uid://bhuue1ol3e0r7" path="res://assets/images/gemstone/yellow-sparkle.png" id="2_hblqw"]
 [ext_resource type="AudioStream" uid="uid://cnwpwi1yo0bhq" path="res://assets/audio/gemstone collect.mp3" id="3_km4se"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hblqw"]
+atlas = ExtResource("2_hblqw")
+region = Rect2(1647, 20, 407, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqmo7"]
+atlas = ExtResource("2_hblqw")
+region = Rect2(2057, 20, 407, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ysak"]
+atlas = ExtResource("2_hblqw")
+region = Rect2(2467, 20, 407, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km4se"]
+atlas = ExtResource("1_yi24a")
+region = Rect2(0, 0, 66, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hblqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hblqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqmo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ysak")
+}],
+"loop": false,
+"name": &"collected",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km4se")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgbp5"]
 radius = 30.0
@@ -11,8 +53,13 @@ height = 68.0
 [node name="Gemstone" type="Area2D" unique_id=1636874804]
 script = ExtResource("1_qgbp5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=217907444]
-texture = ExtResource("1_yi24a")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1667839598]
+position = Vector2(0.6713745, 0.19638187)
+sprite_frames = SubResource("SpriteFrames_hblqw")
+animation = &"collected"
+autoplay = "default"
+frame = 2
+frame_progress = 0.5511477
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70149466]
 position = Vector2(-2, 0)
