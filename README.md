@@ -18,6 +18,11 @@ you're a maiden who escapes(?)
 
 1. Open the URL on itch.io to begin playing: https://ctln-d.itch.io/a-maidens-escape
 
+
+# AI Usage
+
+This project was developed with no AI assistance apart from research for the public domain artworks used.
+
 # Contributing
 
 ## Cloning and Installation
