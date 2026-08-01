@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd0afk3rgjes8"
-path="res://.godot/imported/a-maidens-escape-demo.png-4fa46856e3dcaf7c163bc3f5e2b1c5e1.ctex"
+uid="uid://cbstqxyivxmrq"
+path="res://.godot/imported/kitchen-bg.jpg-a69dfd410e7f89a5e151287a0b5824f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://a-maidens-escape-demo.png"
-dest_files=["res://.godot/imported/a-maidens-escape-demo.png-4fa46856e3dcaf7c163bc3f5e2b1c5e1.ctex"]
+source_file="res://assets/images/backgrounds/kitchen-bg.jpg"
+dest_files=["res://.godot/imported/kitchen-bg.jpg-a69dfd410e7f89a5e151287a0b5824f6.ctex"]
 
 [params]
 

@@ -40,3 +40,14 @@ func _physics_process(delta: float) -> void:
 		
 func die() -> void:
 	alive = false
+	visible = false
+	# can't move code here
+	
+	await get_tree().create_timer(1).timeout
+	# reset_player()
+
+# func reset_player() -> void:
+	# get level _ (load level) start pos
+	alive = true
+	visible = true
+	# can move code here

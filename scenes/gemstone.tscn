@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"collected",
-"speed": 20.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -59,7 +59,7 @@ sprite_frames = SubResource("SpriteFrames_hblqw")
 animation = &"collected"
 autoplay = "default"
 frame = 2
-frame_progress = 0.5511477
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70149466]
 position = Vector2(-2, 0)
