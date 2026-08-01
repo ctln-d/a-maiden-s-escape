@@ -49,10 +49,10 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dywbp")
 
 [node name="Platform" type="TextureRect" parent="." unique_id=2142674894]
-offset_left = -5.333333
-offset_top = 196.33344
-offset_right = 1107.6666
-offset_bottom = 264.33344
+offset_left = -6.333336
+offset_top = 169.66663
+offset_right = 1106.6666
+offset_bottom = 237.66663
 rotation = 0.008726646
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_dywbp")
@@ -66,10 +66,10 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dywbp")
 
 [node name="Platform2" type="TextureRect" parent="." unique_id=1835570837]
-offset_left = 119.0
-offset_top = 195.66663
-offset_right = 1232.0
-offset_bottom = 263.66663
+offset_left = 118.0
+offset_top = 169.00006
+offset_right = 1231.0
+offset_bottom = 237.00006
 rotation = 0.017453292
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_dywbp")
@@ -138,10 +138,10 @@ position = Vector2(215, -301.66666)
 shape = SubResource("RectangleShape2D_8a7m2")
 
 [node name="Platform6" type="TextureRect" parent="." unique_id=166853489]
-offset_left = 93.66666
-offset_top = 305.33325
-offset_right = 1206.6666
-offset_bottom = 373.33325
+offset_left = 92.66669
+offset_top = 278.66663
+offset_right = 1205.6667
+offset_bottom = 346.66663
 rotation = 0.008726646
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_dywbp")
@@ -155,10 +155,10 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dywbp")
 
 [node name="Platform7" type="TextureRect" parent="." unique_id=1490250038]
-offset_left = 217.99988
-offset_top = 304.66675
-offset_right = 1330.9999
-offset_bottom = 372.66675
+offset_left = 216.99988
+offset_top = 278.0
+offset_right = 1329.9999
+offset_bottom = 346.0
 rotation = 0.017453292
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_dywbp")
@@ -172,10 +172,10 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dywbp")
 
 [node name="Platform9" type="TextureRect" parent="." unique_id=1527466586]
-offset_left = -34.33351
-offset_top = 305.00024
-offset_right = 1078.6665
-offset_bottom = 373.00024
+offset_left = -35.33351
+offset_top = 278.3335
+offset_right = 1077.6665
+offset_bottom = 346.3335
 rotation = 0.017453292
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_dywbp")
@@ -189,10 +189,10 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dywbp")
 
 [node name="Platform11" type="TextureRect" parent="." unique_id=1593200693]
-offset_left = -132.33344
-offset_top = 196.0003
-offset_right = 980.66656
-offset_bottom = 264.0003
+offset_left = -133.33344
+offset_top = 169.33374
+offset_right = 979.66656
+offset_bottom = 237.33374
 rotation = 0.017453292
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_dywbp")
@@ -206,7 +206,7 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dywbp")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=530746436]
-position = Vector2(-81.66667, 226.66667)
+position = Vector2(-82.66667, 200)
 scale = Vector2(0.15, 0.15)
 
 [node name="Pie Boy" parent="Enemies" unique_id=966723688 instance=ExtResource("4_dywbp")]
@@ -220,7 +220,7 @@ scale = Vector2(-0.43, 0.43)
 [node name="Gemstones" type="Node2D" parent="." unique_id=981225943]
 
 [node name="Gemstone" parent="Gemstones" unique_id=1636874804 instance=ExtResource("7_2r1tl")]
-position = Vector2(-81.66667, 226.66667)
+position = Vector2(-82.66667, 200)
 scale = Vector2(0.15, 0.15)
 
 [node name="Player" parent="." unique_id=1749205004 instance=ExtResource("4_bfxgj")]

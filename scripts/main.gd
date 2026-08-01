@@ -1,5 +1,7 @@
 extends Node
 
+@onready var score_label: Label = $HUD/ScorePanel/ScoreLabel
+
 var level: int = 1
 var current_level_root: Node = null
 var score: int = 0
@@ -32,7 +34,7 @@ func _on_player_died(body):
 
 func _increase_score() -> void:
 	score += 1
-	print(score)
+	score_label.text = str(score)
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
