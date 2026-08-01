@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -74,7 +74,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(216, 466.33334)
+size = Vector2(173.71428, 273.1667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(43.5, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
+size = Vector2(12.059843, 41)
 
 [node name="Player" type="CharacterBody2D" unique_id=1749205004]
 script = ExtResource("1_dqkch")
@@ -90,10 +99,23 @@ frame = 1
 frame_progress = 0.40093052
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203664312]
-position = Vector2(-13, 7)
+position = Vector2(-20.400002, 40.80417)
 scale = Vector2(0.35, 0.35)
 shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1566635625]
+position = Vector2(-14.75, -24.5)
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=359518400]
+position = Vector2(-17, -58)
+shape = SubResource("CircleShape2D_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=206689069]
 offset = Vector2(30, -20)
 zoom = Vector2(1.2, 1.2)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=983634944]
+position = Vector2(10.766997, -32.882843)
+rotation = 0.3996804
+shape = SubResource("RectangleShape2D_qlg0r")

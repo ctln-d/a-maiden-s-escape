@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7gesdy0w350a" path="res://scenes/player.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://7ylg4gcct1t1" path="res://scenes/pie_boy.tscn" id="4_dywbp"]
 [ext_resource type="PackedScene" uid="uid://cq1rpkk21n3nr" path="res://scenes/gemstone.tscn" id="7_2r1tl"]
+[ext_resource type="Script" uid="uid://c4p7tgs57p2mw" path="res://scripts/end.gd" id="8_8a7m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r1tl"]
 size = Vector2(300.00003, 92.50006)
@@ -37,6 +38,9 @@ size = Vector2(780.6551, 59.986725)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jprdt"]
 load_path = "res://.godot/imported/platform.png-0e94eb507eb1d35883bba856427d6b80.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jprdt"]
+size = Vector2(209.66669, 147.66669)
 
 [node name="LevelRoot" type="Node2D" unique_id=25686978 node_paths=PackedStringArray("level_start_pos")]
 scale = Vector2(3, 3)
@@ -576,6 +580,22 @@ position = Vector2(132.00002, 81.66667)
 position = Vector2(-82.66667, 200)
 scale = Vector2(0.15, 0.15)
 
+[node name="Gemstone2" parent="Gemstones" unique_id=390023356 instance=ExtResource("7_2r1tl")]
+position = Vector2(162.33328, 330.3333)
+scale = Vector2(0.15, 0.15)
+
 [node name="Player" parent="." unique_id=1749205004 instance=ExtResource("4_bfxgj")]
 position = Vector2(105.33333, 161.33333)
 scale = Vector2(0.334, 0.334)
+
+[node name="End" type="Area2D" parent="." unique_id=545829087]
+position = Vector2(600, 446.66666)
+script = ExtResource("8_8a7m2")
+end_scene = "uid://n4if5fcjv8xm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End" unique_id=1131975215]
+position = Vector2(-53.5, -6.166626)
+shape = SubResource("RectangleShape2D_jprdt")
+
+[connection signal="area_shape_entered" from="End" to="End" method="_on_area_shape_entered"]
+[connection signal="body_shape_entered" from="End" to="End" method="_on_body_shape_entered"]

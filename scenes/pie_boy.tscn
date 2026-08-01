@@ -4,6 +4,26 @@
 [ext_resource type="Script" uid="uid://c7m2kjjjy3id7" path="res://scripts/pie_boy.gd" id="1_tisqf"]
 [ext_resource type="Texture2D" uid="uid://c0yt1yp7jmu7" path="res://assets/images/doughv2.png" id="3_5xptc"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aswk2"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(19, 0, 553, 743)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krxoc"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(572, 0, 553, 743)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bdak"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(1125, 0, 553, 743)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1vl5"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(1678, 0, 553, 743)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ygf"]
+atlas = ExtResource("1_ik1fn")
+region = Rect2(2231, 743, 553, 743)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ik1fn"]
 atlas = ExtResource("1_ik1fn")
 region = Rect2(19, 743, 553, 743)
@@ -20,28 +40,40 @@ region = Rect2(1125, 743, 553, 743)
 atlas = ExtResource("1_ik1fn")
 region = Rect2(1678, 743, 553, 743)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_26ygf"]
-atlas = ExtResource("1_ik1fn")
-region = Rect2(2231, 743, 553, 743)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t1vl5"]
-atlas = ExtResource("1_ik1fn")
-region = Rect2(1678, 0, 553, 743)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6bdak"]
-atlas = ExtResource("1_ik1fn")
-region = Rect2(1125, 0, 553, 743)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_krxoc"]
-atlas = ExtResource("1_ik1fn")
-region = Rect2(572, 0, 553, 743)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aswk2"]
-atlas = ExtResource("1_ik1fn")
-region = Rect2(19, 0, 553, 743)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_6bdak"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aswk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aswk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krxoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bdak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1vl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ygf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1vl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bdak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krxoc")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ik1fn")
@@ -66,13 +98,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_krxoc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aswk2")
 }],
-"loop": true,
+"loop": false,
 "name": &"toss",
-"speed": 15.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26ygf"]
@@ -93,8 +122,12 @@ tracks/0/keys = {
 "values": [Vector2(0, -142)]
 }
 
+[sub_resource type="Animation" id="Animation_26ygf"]
+resource_name = "intro"
+length = 0.5
+
 [sub_resource type="Animation" id="Animation_5xptc"]
-resource_name = "toss"
+resource_name = "loop"
 length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -113,7 +146,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_26ygf"]
 _data = {
 &"RESET": SubResource("Animation_tisqf"),
-&"toss": SubResource("Animation_5xptc")
+&"intro": SubResource("Animation_26ygf"),
+&"loop": SubResource("Animation_5xptc")
 }
 
 [node name="Pie Boy" type="Area2D" unique_id=966723688]
@@ -123,8 +157,6 @@ script = ExtResource("1_tisqf")
 sprite_frames = SubResource("SpriteFrames_6bdak")
 animation = &"toss"
 autoplay = "toss"
-frame = 2
-frame_progress = 0.24743009
 
 [node name="Dough" type="AnimatableBody2D" parent="." unique_id=953526283]
 position = Vector2(0, -142)
@@ -142,6 +174,7 @@ shape = SubResource("CircleShape2D_26ygf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dough" unique_id=1422452961]
 libraries/ = SubResource("AnimationLibrary_26ygf")
-autoplay = &"toss"
+next/intro = &"loop"
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Dough/Area2D" to="." method="_on_area_2d_body_entered"]
